@@ -1,9 +1,12 @@
 import express from "express";
 import cookieParser from "cookie-parser";
+import sassMiddleware from "node-sass-middleware";
+
 
 //truco __dirname
 import path from "path";
 import { fileURLToPath } from "url";
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 //controlador de autenticacion
@@ -19,8 +22,14 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.json());// lee json
 app.use(cookieParser());//modifica las cookies
 app.use(express.urlencoded({extended: false})); 
+app.use(sassMiddleware({
+    src: path.join(__dirname, '/styleSass/scss'), // Carpeta donde están los archivos SCSS
+    dist: path.join(__dirname, '/styleSass/css'),// Carpeta donde se generará el CSS compilado
+    outputStyle: 'compressed', }));// Estilo de salida (puedes usar 'expanded' para desarrollo)
+
 //Rutas endpoint con middleware
-app.get("/",autorization.soloPublic,(req, res)=> res.sendFile(__dirname + "/pages/login.html"));
+app.get("/",(req, res)=> res.sendFile(__dirname + "/pages/main.html"));
+app.get("/login",autorization.soloPublic,(req, res)=> res.sendFile(__dirname + "/pages/login.html"));
 app.get("/registro",autorization.soloPublic,(req, res)=> res.sendFile(__dirname + "/pages/register.html"));
 app.get("/agenda",autorization.soloAdmin,(req, res)=> res.sendFile(__dirname + "/pages/agenda/agenda.html"));
 

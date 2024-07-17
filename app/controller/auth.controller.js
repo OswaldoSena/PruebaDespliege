@@ -72,7 +72,7 @@ async function register(req, res){
     }
     usuario.push(nuevoUsuario);
     console.log(nuevoUsuario);
-    return res.status(201).send({status:"Ok", messages: `Usuario ${nuevoUsuario.user} aregado`, redirect:"/"})
+    return res.status(201).send({status:"Ok", messages: `Usuario ${nuevoUsuario.user} aregado`, redirect:"/login"})
 }
 //await pool.query('INSERT INTO usuario SET ?',[nuevoUsuario])
 
