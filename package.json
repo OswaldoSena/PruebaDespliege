@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon --exec node app/index.js",
+    "deploy": "gh-pages -d .",
     "test": "set NODE_OPTIONS=--experimental-vm-modules && npx jest",
     "test:watch": "npm run test -- --watch"
   },
@@ -18,7 +19,6 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
-    "mysql": "^2.18.1",
     "mysql2": "^3.10.1",
     "node-sass": "^9.0.0",
     "node-sass-middleware": "^1.1.0"
