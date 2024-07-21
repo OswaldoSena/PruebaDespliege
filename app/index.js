@@ -18,17 +18,15 @@ import app from "./server/ServerConfiguration.js"
 
 //Configuracion paginas estaticas archivos publicos
 app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/style"));
+app.use(express.static(__dirname + "/styleIndex"));
 //middleware
 app.use(express.json());// lee json
 app.use(cookieParser());//modifica las cookies
 app.use(express.urlencoded({extended: false})); 
-app.use(sassMiddleware({
-    src: path.join(__dirname, '/styleSass/scss'), // Carpeta donde están los archivos SCSS
-    dist: path.join(__dirname, '/styleSass/css'),// Carpeta donde se generará el CSS compilado
-    }));// Estilo de salida (puedes usar 'expanded' para desarrollo)
 
 //Rutas endpoint con middleware
-app.get("/",(req, res)=> res.sendFile(__dirname + "/main.html"));
+app.get("/",(req, res)=> res.sendFile(__dirname + "/index.html"));
 app.get("/login",autorization.soloPublic,(req, res)=> res.sendFile(__dirname + "/pages/login.html"));
 app.get("/registro",autorization.soloPublic,(req, res)=> res.sendFile(__dirname + "/pages/register.html"));
 app.get("/agenda",autorization.soloAdmin,(req, res)=> res.sendFile(__dirname + "/pages/agenda/agenda.html"));

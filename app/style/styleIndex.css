@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    
+}
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    
+    width: 100%;
+    border: 1px solid #bbb;
+    background-color: #ef1515;
+}
+li {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+  
+li a {
+    display: block;
+    padding: 8px;
+    background-color: #ef1515;
+}
+
+li a:hover {
+    background-color: #999999;
+}
+
+footer{
+    background-color: #ef1515;
+    position: bottom;
+}
+
+.derecha{
+    float: right;
+}
+
+.card{
+    display: block;
+    margin: auto;
+    top:10px;
+    width: 500px;
+    background-color: #999999;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+
+

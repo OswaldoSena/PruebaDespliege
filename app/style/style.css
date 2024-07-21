@@ -27,31 +27,47 @@ body{
     font-size: larger;
 }
 
-.form-container{
-    width: 500px;
-    background-color: #999999;
-    border-radius: 10px;
-    padding: 50px;
-}
-
 form{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+
 form+p, form p{
     text-align: center;
 }
+
 input, button{
     border-radius: 10px;
     border: unset;
-    padding: 15px 30px;
+    padding: 15px 30px;    
+}
+
+input{
     font-size: larger;
 }
+
 button{
-    background-color: red;
+    background-color: #ef1515;
     font-weight:bolder;
     cursor: pointer;
+    font-size: medium;
+}
+
+.button {
+    transition-duration: 0.4s;
+}
+  
+.button:hover {
+    background-color: #574949; /* Green */
+    color: white;
+}
+
+.form-container{
+    width: 500px;
+    background-color: #999999;
+    border-radius: 10px;
+    padding: 50px;
 }
 .error{
     color: rgb(112, 16, 16);
