@@ -16,6 +16,8 @@ import {methods as autorization} from "./middleware/authorization.js";
 //Server
 import app from "./server/ServerConfiguration.js"
 
+
+
 //Configuracion paginas estaticas archivos publicos
 app.use(express.static(__dirname + "/public"));
 app.use(express.static(__dirname + "/style"));
