@@ -1,6 +1,5 @@
 import express from "express";
 import cookieParser from "cookie-parser";
-import sassMiddleware from "node-sass-middleware";
 
 
 //truco __dirname
